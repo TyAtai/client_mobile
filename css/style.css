@@ -1,0 +1,232 @@
+/* =============================== */
+/*          COLOR PALETTE          */
+/* =============================== */
+
+:root {
+  --michigan-blue: #00274C;
+  --michigan-maize: #FFCB05;
+  --puma-black: #131516;
+  --light-gray: #ECEBEB;
+  --warm-gray: #989C97;
+
+}
+
+/* =============================== */
+/*        GLOBAL STRUCTURE         */
+/* =============================== */
+
+section {
+  padding: 10px;
+}
+
+html, body {
+  overflow-x: hidden;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+  color: var(--puma-black);
+
+  /* Fallback background */
+  background-color: var(--light-gray);
+}
+
+footer{
+  padding-bottom: 80px;
+}
+
+h1 {
+  font-size: 120%;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: 400;
+}
+
+
+
+
+
+/* ============================= */
+/*             header            */
+/* ============================= */
+
+header{
+  /* position: fixed; */
+  /* top: 0; */
+  background-color: var(--michigan-blue);
+  color: white;
+  box-shadow: 0 5px 5px gray;
+}
+
+header div.headerContainer{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  column-gap: 16px;
+  margin: 0 10px;
+  justify-content: stretch;
+  align-items: center;
+  justify-items: center;
+
+}
+
+img.headerIMG{
+  max-width: 100%;
+  height: auto;
+  grid-column: 1 / 2;
+  padding: 10px;
+}
+
+h1.headerH1{
+  grid-column: 2 / 5;
+}
+
+
+/* ============================= */
+/*         skip to main          */
+/* ============================= */
+
+
+/* skip to main content */
+.skip_main {
+  position: absolute;
+  top: 0;
+  left: -10000px; /* Initially hide off-screen */
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  background-color: #FFCB05; /* Button background */
+  color: #00274C; /* Button text color */
+  padding: 10px;
+  text-decoration: none;
+  z-index: 9999;
+  transition: transform 0.3s ease; /* Smooth transition */
+}
+
+.skip_main:focus {
+  position: absolute;
+  top: 0px;
+  left: 0;
+  width: auto;
+  height: auto;
+  overflow: visible;
+  transform: translateX(0%); /* Move into view */
+  background-color: #FFCB05; /* Example button style */
+  color: #00274C;
+}
+
+/* ============================= */
+/*        bottom nav bar         */
+/* ============================= */
+
+nav.bottom-nav-bar{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  background-color: var(--warm-gray);
+  color: var(--puma-black);
+  box-shadow: 0 -3px 6px rgba(0,0,0,0.2);
+}
+
+nav ul.nav-grid{
+    display: grid;
+    height: 100%;
+    padding: 0 8px;
+
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin: 2px 16px;
+    justify-content: stretch;
+    justify-items: center;
+    /* justify-items: stretch;
+    align-content: stretch; */
+    align-items: center;
+    column-gap: 8px;
+}
+
+
+
+/* =============================== */
+/*         NAV BUTTON STYLE        */
+/* =============================== */
+
+.nav-grid li {
+    width: 100%;
+    height: 100%;
+}
+
+/* Make buttons fill each grid cell */
+a.nav-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: var(--michigan-maize);
+    color: var(--michigan-blue);
+
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 8px;
+
+    transition: background-color 0.25s ease, color 0.25s ease, transform 0.2s ease;
+}
+
+/* Hover effect */
+a.nav-button:hover {
+    background-color: var(--michigan-blue);
+    color: white;
+    transform: scale(1.03);
+}
+
+/* Active/current page button */
+a.current {
+    background-color: var(--michigan-blue);
+    color: white;
+}
+
+/* ============================= */
+/*       body-grid-container     */
+/* ============================= */
+
+section.body-grid-container{
+  background-color: rgba(0,0,0,0.06);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin: 20px 16px;
+  column-gap: 16px;
+  row-gap: 16px;
+  justify-items: center;
+  align-items: center;
+
+}
+
+
+/* ============================= */
+/* item-big (mobile: all columns)*/
+/* ============================= */
+
+.item-big{
+  grid-column: 1 / 5;
+  max-width: 100%;
+  height: auto;
+}
+
+
+/* ============================= */
+/*             footer.           */
+/* ============================= */
+
+footer{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin: 20px 16px;
+  column-gap: 16px;
+  row-gap: 16px;
+  justify-items: center;
+  align-items: center;
+}
